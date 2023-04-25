@@ -20,7 +20,7 @@ gradlew.bat
 .sts4-cache
 bin/
 !**/src/main/**/bin/
-!**/src/test/**/bin/
+!**/src/seervicetest.ServiceTest/**/bin/
 
 ### IntelliJ IDEA ###
 .idea/
@@ -30,7 +30,7 @@ bin/
 *.ipr
 out/
 !**/src/main/**/out/
-!**/src/test/**/out/
+!**/src/seervicetest.ServiceTest/**/out/
 
 ### NetBeans ###
 /nbproject/private/

@@ -9,7 +9,7 @@ import java.util.Set;
 public record Product(String description, Set<Offer> offers) {
 
     public Product(String description, Price price) {
-        this(null, Set.of());
+        this(description, Set.of(new Offer(1,price)));
     }
 
     @Override

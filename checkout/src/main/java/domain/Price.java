@@ -7,8 +7,17 @@ import java.util.Collection;
  */
 public record Price(int euro, int cent) {
 
-    public Price {
 
+    public Price {
+        if (euro<0 || cent<0){
+            throw new IllegalArgumentException();
+        }
+        if ( cent>= 100){
+            while (cent >=100){
+                euro++;
+                cent=cent-100;
+            }
+        }
     }
 
     /**
@@ -18,7 +27,10 @@ public record Price(int euro, int cent) {
      * @return the sum
      */
     public static Price sum(Collection<Price> prices) {
-        return null;
+        return prices.stream()
+                .reduce((price, price2) -> {
+                    return new Price(price2.euro+price.euro,price2.cent+price.cent);
+                }).orElse(new Price(0,0));
     }
 
     /**
@@ -28,7 +40,7 @@ public record Price(int euro, int cent) {
      * @return new Price containing sum of this and price
      */
     public Price add(Price price) {
-        return null;
+        return new Price(this.euro+price.euro,this.cent+price.cent);
     }
 
     /**
@@ -38,11 +50,17 @@ public record Price(int euro, int cent) {
      * @return new Price containing the product of this and n
      */
     public Price multiply(int n) {
-        return null;
+        var euro= this.euro*n;
+        var cent = this.cent*n;
+        while (cent >100){
+            euro++;
+            cent=cent-100;
+        }
+        return new Price(euro,cent);
     }
 
     @Override
     public String toString() {
-        return null;
+        return this.euro+"."+(this.cent<10?"0"+this.cent:this.cent);
     }
 }

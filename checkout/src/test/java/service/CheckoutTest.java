@@ -117,7 +117,6 @@ class CheckoutTest {
 
     @Nested
     class Filtering {
-
         @Test
         void removes_unknown_products() {
             var apple = new Product("Apple", new Price(1, 0));

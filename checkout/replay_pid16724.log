@@ -2220,11 +2220,11 @@ instanceKlass org/gradle/plugins/ide/internal/IdeArtifactRegistry
 instanceKlass org/gradle/internal/snapshot/Snapshot
 instanceKlass org/gradle/internal/snapshot/impl/DefaultSnapshottingService
 instanceKlass org/gradle/internal/snapshot/SnapshottingService
-instanceKlass org/gradle/internal/enterprise/test/TestTaskProperties
-instanceKlass org/gradle/internal/enterprise/test/TestTaskFilters
-instanceKlass org/gradle/internal/enterprise/test/TestTaskForkOptions
-instanceKlass org/gradle/internal/enterprise/test/impl/DefaultTestTaskPropertiesService
-instanceKlass org/gradle/internal/enterprise/test/TestTaskPropertiesService
+instanceKlass org/gradle/internal/enterprise/seervicetest.ServiceTest/TestTaskProperties
+instanceKlass org/gradle/internal/enterprise/seervicetest.ServiceTest/TestTaskFilters
+instanceKlass org/gradle/internal/enterprise/seervicetest.ServiceTest/TestTaskForkOptions
+instanceKlass org/gradle/internal/enterprise/seervicetest.ServiceTest/impl/DefaultTestTaskPropertiesService
+instanceKlass org/gradle/internal/enterprise/seervicetest.ServiceTest/TestTaskPropertiesService
 instanceKlass org/gradle/buildinit/plugins/internal/ProjectLayoutSetupRegistry
 instanceKlass org/gradle/buildinit/plugins/internal/services/BuildInitServices$ProjectScopeBuildInitServices
 instanceKlass org/gradle/api/publish/maven/internal/publisher/MavenDuplicatePublicationTracker
@@ -8537,7 +8537,7 @@ instanceKlass org/gradle/internal/snapshot/impl/IsolationException
 instanceKlass org/gradle/internal/snapshot/ValueSnapshottingException
 instanceKlass org/apache/tools/ant/BuildException
 instanceKlass org/gradle/tooling/internal/protocol/InternalBuildActionFailureException
-instanceKlass org/gradle/tooling/internal/protocol/test/InternalTestExecutionException
+instanceKlass org/gradle/tooling/internal/protocol/seervicetest.ServiceTest/InternalTestExecutionException
 instanceKlass java/io/UncheckedIOException
 instanceKlass org/gradle/internal/typeconversion/TypeConversionException
 instanceKlass com/google/common/util/concurrent/UncheckedExecutionException

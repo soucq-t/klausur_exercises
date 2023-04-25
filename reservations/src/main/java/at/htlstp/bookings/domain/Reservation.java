@@ -35,9 +35,9 @@ public class Reservation {
 
     @Future
     @Column(name = "reservation_time")
-    private LocalDateTime localDateTime;
+    private LocalDateTime time;
 
     @Column(name = "group_size")
     @Positive
-    private int anzahlPerson;
+    private int groupSize;
 }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>Title</title>
+</head>
+<body>
+
+<h1> Launches:</h1>
+
+<a th:href="@{/add}">Add new</a>
+<div>
+    <table>
+        <tr>
+            <th>Company</th>
+            <th>Date</th>
+            <th>Rocket</th>
+            <th>Success</th>
+        </tr>
+        <tr th:each="launch: ${allLaunches}">
+            <td><a th:text="${launch.getRocket().getCompanyName().getCompanyName()}" th:href="@{/launches/{id} (id=${launch.rocket.getCompanyName().getCompanyName()})}"></a> </td>
+            <td th:text="${launch.getDate()}">launch.date </td>
+            <td th:text="${launch.getRocket().getRocketName()}"></td>
+            <td th:text="${launch.isSuccess()}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

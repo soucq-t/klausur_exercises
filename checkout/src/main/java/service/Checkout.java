@@ -18,7 +18,30 @@ public record Checkout(Set<Product> products) {
      * @return the total price
      */
     public Price total(Set<Item> items) {
-        return null;
+
+        Price finalPrice=new Price(0,0);
+        for (Item item : items) {
+            if(!products.contains(item.product())){
+                continue;
+            }
+            int quantity = item.quantity();
+            Product product=item.product();
+                if (!product.offers().isEmpty()) {
+                    List<Offer> sortedOffers = product.offers()
+                            .stream()
+                            .sorted(Comparator.comparingDouble(o -> (o.price().euro() + o.price().cent() * 0.01)/ o.quantity()))
+                            .collect(Collectors.toList());
+                     for (Offer o:sortedOffers) {
+                         while (quantity!=0 && quantity >= o.quantity()){
+                             finalPrice= new Price(finalPrice.euro()+o.price().euro(), finalPrice.cent()+o.price().cent());
+                             quantity-=o.quantity();
+                         }
+                        }
+            }
+
+
+        }
+        return finalPrice;
     }
 
     /**

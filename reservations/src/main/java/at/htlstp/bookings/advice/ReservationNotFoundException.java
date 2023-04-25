@@ -1,4 +1,4 @@
 package at.htlstp.bookings.advice;
 
-public class ReservationNotFoundException extends Throwable {
+public class ReservationNotFoundException extends RuntimeException {
 }

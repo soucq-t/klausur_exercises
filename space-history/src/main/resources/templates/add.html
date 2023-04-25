@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>Title</title>
+</head>
+<body>
+<div>
+
+    <form method="post"
+          th:action="@{/add}"
+          th:object="${launch}">
+        <div th:if="${#fields.hasErrors('*')}">
+            <h1>Errors</h1>
+            <ul>
+                <li th:each="err : ${#fields.errors('*')}"
+                    th:text="${err}">Error
+                </li>
+            </ul>
+        </div>
+        <div>
+            <label th:for="name">Name: </label>
+            <select th:field="${company.companyName}">
+                <option th:each="comp: ${companies}"
+                        th:value="${comp.companyName}"
+                        th:text="${comp.companyName}"></option>
+            </select>
+
+        </div>
+        <div>
+            <label>Date:</label>
+            <input type="date" th:field="*{date}"/>
+        </div>
+        <div>
+            <label>Rocket: </label>
+            <input type="text" th:field="${rocket.rocketName}"/>
+        </div>
+
+        <div>
+            <label>Success: </label>
+            <ul>
+                <li><input type="checkbox" th:field="*{success}" th:value="*{success}"></li>
+            </ul>
+        </div>
+
+        <input type="submit" th:text="Save">
+    </form>
+
+</div>
+</body>
+</html>
